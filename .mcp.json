@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "lockin": {
+      "command": "npx",
+      "args": ["tsx", "../lock-in-design-system/apps/server/src/stdio.ts"]
+    }
+  }
+}

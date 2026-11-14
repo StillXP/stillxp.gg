@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 960 408" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="contrast-gate-title contrast-gate-desc" id="contrast-gate-root">
+        <title id="contrast-gate-title">The contrast gate</title>
+        <desc id="contrast-gate-desc">Flowchart of the token build: an edit resolves aliases per mode and theme, runs 486 contrast checks, and either emits every output or fails the build and sends the author back to fix the token mapping.</desc>
+        <defs>
+      <style>@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500;600&amp;family=Noto+Serif:ital@0;1&amp;family=Noto+Sans+KR:wght@400;500;600&amp;family=Noto+Serif+KR:wght@400&amp;family=Noto+Sans+TC:wght@400;500;600&amp;family=Noto+Serif+TC:wght@400&amp;display=swap');
+      #contrast-gate-root { --color-paper:  #f4f5f7;
+      --color-ink:    #1c2028;
+      --color-muted:  #4b5260;
+      --font-sans:  'Geist', system-ui, sans-serif;
+      --font-serif: 'Instrument Serif', 'Noto Serif', serif;
+      --font-mono:  'Geist Mono', ui-monospace, monospace; }
+      #contrast-gate-root { font-family: var(--font-sans); color: var(--color-ink); }
+      #contrast-gate-root .diagram-container { width: 100%; overflow-x: auto; }
+      #contrast-gate-root .caption { font-family: var(--font-serif); font-style: italic; font-size: 1.05rem; color: var(--color-muted); max-width: 60ch; margin-bottom: 1.5rem; }
+      @media print {
+#contrast-gate-root .diagram-container { overflow-x: visible; }
+}</style>
+          <marker id="contrast-gate-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4b5260"/></marker>
+          <marker id="contrast-gate-arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2563eb"/></marker>
+        </defs>
+        <rect width="100%" height="100%" fill="#f4f5f7"/>
+  <path d="M160,124 H208" fill="none" stroke="#4b5260" stroke-width="1.2" marker-end="url(#contrast-gate-arrow)"/>
+  <path d="M368,124 H416" fill="none" stroke="#4b5260" stroke-width="1.2" marker-end="url(#contrast-gate-arrow)"/>
+  <path d="M576,124 H606" fill="none" stroke="#4b5260" stroke-width="1.2" marker-end="url(#contrast-gate-arrow)"/>
+  <path d="M736,124 H776" fill="none" stroke="#4b5260" stroke-width="1.2" marker-end="url(#contrast-gate-arrow)"/>
+  <path d="M672,172 V256" fill="none" stroke="#2563eb" stroke-width="1.2" marker-end="url(#contrast-gate-arrow-accent)"/>
+  <path d="M592,284 H368" fill="none" stroke="#4b5260" stroke-width="1.2" marker-end="url(#contrast-gate-arrow)"/>
+  <path d="M208,284 H104 Q96,284 96,276 V152" fill="none" stroke="#4b5260" stroke-width="1.2" marker-end="url(#contrast-gate-arrow)"/>
+  <rect x="741.2" y="105" width="29.6" height="13" fill="#f4f5f7"/>
+  <text x="756" y="114" fill="#4b5260" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.06em" text-anchor="middle">PASS</text>
+  <rect x="680" y="209" width="29.6" height="13" fill="#f4f5f7"/>
+  <text x="684" y="218" fill="#4b5260" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.06em" text-anchor="start">FAIL</text>
+  <rect x="104" y="213" width="35.0" height="13" fill="#f4f5f7"/>
+  <text x="108" y="222" fill="#4b5260" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.06em" text-anchor="start">RETRY</text>
+  <rect x="32" y="96" width="128" height="56" rx="28" fill="#f4f5f7"/><rect x="32" y="96" width="128" height="56" rx="28" fill="#ffffff" stroke="#1c2028" stroke-width="1"/>
+  <text x="96" y="120" fill="#1c2028" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Token edit</text>
+  <text x="96" y="136" fill="#4b5260" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">PR or update_token</text>
+
+  <g>
+    <rect x="208" y="96" width="160" height="56" rx="6" fill="#f4f5f7"/>
+    <rect x="208" y="96" width="160" height="56" rx="6" fill="#ffffff" stroke="#1c2028" stroke-width="1"/>
+    <rect x="216" y="102" width="37" height="12" rx="2" fill="none" stroke="#1c2028" stroke-width="0.8" stroke-opacity="0.3"/>
+    <text x="234.5" y="111" fill="#656c7a" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" font-weight="500" text-anchor="middle" letter-spacing="0.08em">BUILD</text>
+    <text x="288.0" y="132" fill="#1c2028" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Resolve aliases</text>
+    <text x="288.0" y="146" fill="#4b5260" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">per mode × theme</text>
+  </g>
+  <g>
+    <rect x="416" y="96" width="160" height="56" rx="6" fill="#f4f5f7"/>
+    <rect x="416" y="96" width="160" height="56" rx="6" fill="#ffffff" stroke="#1c2028" stroke-width="1"/>
+    <rect x="424" y="102" width="37" height="12" rx="2" fill="none" stroke="#1c2028" stroke-width="0.8" stroke-opacity="0.3"/>
+    <text x="442.5" y="111" fill="#656c7a" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" font-weight="500" text-anchor="middle" letter-spacing="0.08em">BUILD</text>
+    <text x="496.0" y="132" fill="#1c2028" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Run contrast pairs</text>
+    <text x="496.0" y="146" fill="#4b5260" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">39 rules, 486 checks</text>
+  </g>  <polygon points="672,76 736,124 672,172 608,124" fill="#f4f5f7"/>
+  <polygon points="672,76 736,124 672,172 608,124" fill="#2563eb" stroke="#2563eb" stroke-width="1" fill-opacity="0.08"/>
+  <text x="672" y="122" fill="#1c2028" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">All pairs</text>
+  <text x="672" y="136" fill="#4b5260" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">≥ AA?</text>
+  <rect x="776" y="96" width="152" height="56" rx="28" fill="#f4f5f7"/><rect x="776" y="96" width="152" height="56" rx="28" fill="#ffffff" stroke="#1c2028" stroke-width="1"/>
+  <text x="852" y="120" fill="#1c2028" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Emit outputs</text>
+  <text x="852" y="136" fill="#4b5260" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">CSS · JS · native · JSON</text>
+
+  <g>
+    <rect x="592" y="256" width="160" height="56" rx="6" fill="#f4f5f7"/>
+    <rect x="592" y="256" width="160" height="56" rx="6" fill="#1c2028" stroke="#4b5260" stroke-width="1" fill-opacity="0.05"/>
+    <rect x="600" y="262" width="32" height="12" rx="2" fill="none" stroke="#1c2028" stroke-width="0.8" stroke-opacity="0.3"/>
+    <text x="616.0" y="271" fill="#656c7a" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" font-weight="500" text-anchor="middle" letter-spacing="0.08em">FAIL</text>
+    <text x="672.0" y="292" fill="#1c2028" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Build fails</text>
+    <text x="672.0" y="306" fill="#4b5260" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">lists the failing pairs</text>
+  </g>
+  <g>
+    <rect x="208" y="256" width="160" height="56" rx="6" fill="#f4f5f7"/>
+    <rect x="208" y="256" width="160" height="56" rx="6" fill="#ffffff" stroke="#1c2028" stroke-width="1"/>
+    <rect x="216" y="262" width="37" height="12" rx="2" fill="none" stroke="#1c2028" stroke-width="0.8" stroke-opacity="0.3"/>
+    <text x="234.5" y="271" fill="#656c7a" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" font-weight="500" text-anchor="middle" letter-spacing="0.08em">HUMAN</text>
+    <text x="288.0" y="292" fill="#1c2028" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Fix the mapping</text>
+    <text x="288.0" y="306" fill="#4b5260" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">never lower the check</text>
+  </g>  <line x1="32" y1="352" x2="928" y2="352" stroke="#1c2028" stroke-width="0.8" stroke-opacity="0.1"/>
+  <text x="32" y="376" fill="#4b5260" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">LEGEND</text>
+  <g transform="translate(104,368)"><rect x="0" y="0" width="20" height="12" rx="6" fill="#ffffff" stroke="#1c2028" stroke-width="1"/><text x="28" y="8" fill="#4b5260" font-size="9" font-family="'Geist Mono', ui-monospace, monospace">Start / end</text></g>
+  <g transform="translate(236,368)"><rect x="0" y="0" width="20" height="12" rx="3" fill="#ffffff" stroke="#1c2028" stroke-width="1"/><text x="28" y="8" fill="#4b5260" font-size="9" font-family="'Geist Mono', ui-monospace, monospace">Step</text></g>
+  <g transform="translate(324,368)"><polygon points="10,0 20,6 10,12 0,6" fill="#2563eb" stroke="#2563eb" stroke-width="1" fill-opacity="0.08"/><text x="28" y="8" fill="#4b5260" font-size="9" font-family="'Geist Mono', ui-monospace, monospace">Decision (the gate)</text></g>
+
+      </svg>

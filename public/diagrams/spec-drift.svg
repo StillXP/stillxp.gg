@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 960 484" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="spec-drift-title spec-drift-desc" id="spec-drift-root">
+        <title id="spec-drift-title">One spec, checked against both codebases</title>
+        <desc id="spec-drift-desc">A component spec JSON file feeds the Figma props map and the get_component tool. A check script reads the React and React Native prop types with the TypeScript compiler API, compares them with the spec and fails the build on drift.</desc>
+        <defs>
+      <style>@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500;600&amp;family=Noto+Serif:ital@0;1&amp;family=Noto+Sans+KR:wght@400;500;600&amp;family=Noto+Serif+KR:wght@400&amp;family=Noto+Sans+TC:wght@400;500;600&amp;family=Noto+Serif+TC:wght@400&amp;display=swap');
+      #spec-drift-root { --color-paper:  #f4f5f7;
+      --color-ink:    #1c2028;
+      --color-muted:  #4b5260;
+      --font-sans:  'Geist', system-ui, sans-serif;
+      --font-serif: 'Instrument Serif', 'Noto Serif', serif;
+      --font-mono:  'Geist Mono', ui-monospace, monospace; }
+      #spec-drift-root { font-family: var(--font-sans); color: var(--color-ink); }
+      #spec-drift-root .diagram-container { width: 100%; overflow-x: auto; }
+      #spec-drift-root .caption { font-family: var(--font-serif); font-style: italic; font-size: 1.05rem; color: var(--color-muted); max-width: 60ch; margin-bottom: 1.5rem; }
+      @media print {
+#spec-drift-root .diagram-container { overflow-x: visible; }
+}</style>
+          <marker id="spec-drift-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4b5260"/></marker>
+          <marker id="spec-drift-arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2563eb"/></marker>
+        </defs>
+        <rect width="100%" height="100%" fill="#f4f5f7"/>
+  <path d="M480,120 V208" fill="none" stroke="#4b5260" stroke-width="1.2" marker-end="url(#spec-drift-arrow)"/>
+  <path d="M400,92 H280" fill="none" stroke="#4b5260" stroke-width="1.2" marker-end="url(#spec-drift-arrow)"/>
+  <path d="M560,92 H680" fill="none" stroke="#4b5260" stroke-width="1.2" marker-end="url(#spec-drift-arrow)"/>
+  <path d="M280,236 H400" fill="none" stroke="#4b5260" stroke-width="1.2" marker-end="url(#spec-drift-arrow)"/>
+  <path d="M680,236 H560" fill="none" stroke="#4b5260" stroke-width="1.2" marker-end="url(#spec-drift-arrow)"/>
+  <path d="M480,264 V352" fill="none" stroke="#2563eb" stroke-width="1.2" marker-end="url(#spec-drift-arrow-accent)"/>
+  <rect x="309.0" y="73" width="62.0" height="13" fill="#f4f5f7"/>
+  <text x="340" y="82" fill="#4b5260" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.06em" text-anchor="middle">FIGMA ROWS</text>
+  <rect x="586.3" y="73" width="67.4" height="13" fill="#f4f5f7"/>
+  <text x="620" y="82" fill="#4b5260" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.06em" text-anchor="middle">AGENTS READ</text>
+  <rect x="322.5" y="217" width="35.0" height="13" fill="#f4f5f7"/>
+  <text x="340" y="226" fill="#4b5260" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.06em" text-anchor="middle">PROPS</text>
+  <rect x="602.5" y="217" width="35.0" height="13" fill="#f4f5f7"/>
+  <text x="620" y="226" fill="#4b5260" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.06em" text-anchor="middle">PROPS</text>
+  <rect x="488" y="303" width="78.2" height="13" fill="#f4f5f7"/>
+  <text x="492" y="312" fill="#4b5260" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.06em" text-anchor="start">FAIL ON DRIFT</text>
+
+  <g>
+    <rect x="400" y="64" width="160" height="56" rx="6" fill="#f4f5f7"/>
+    <rect x="400" y="64" width="160" height="56" rx="6" fill="#ffffff" stroke="#1c2028" stroke-width="1"/>
+    <rect x="408" y="70" width="32" height="12" rx="2" fill="none" stroke="#1c2028" stroke-width="0.8" stroke-opacity="0.3"/>
+    <text x="424.0" y="79" fill="#656c7a" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" font-weight="500" text-anchor="middle" letter-spacing="0.08em">SPEC</text>
+    <text x="480.0" y="100" fill="#1c2028" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Component spec</text>
+    <text x="480.0" y="114" fill="#4b5260" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">components/*.json</text>
+  </g>
+  <g>
+    <rect x="120" y="64" width="160" height="56" rx="6" fill="#f4f5f7"/>
+    <rect x="120" y="64" width="160" height="56" rx="6" fill="#4b5260" stroke="#656c7a" stroke-width="1" fill-opacity="0.10"/>
+    <rect x="128" y="70" width="37" height="12" rx="2" fill="none" stroke="#1c2028" stroke-width="0.8" stroke-opacity="0.3"/>
+    <text x="146.5" y="79" fill="#656c7a" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" font-weight="500" text-anchor="middle" letter-spacing="0.08em">FIGMA</text>
+    <text x="200.0" y="100" fill="#1c2028" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Figma props map</text>
+    <text x="200.0" y="114" fill="#4b5260" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">195 rows, 4 statuses</text>
+  </g>
+  <g>
+    <rect x="680" y="64" width="160" height="56" rx="6" fill="#f4f5f7"/>
+    <rect x="680" y="64" width="160" height="56" rx="6" fill="#1c2028" stroke="#4b5260" stroke-width="1" fill-opacity="0.05"/>
+    <rect x="688" y="70" width="22" height="12" rx="2" fill="none" stroke="#1c2028" stroke-width="0.8" stroke-opacity="0.3"/>
+    <text x="699.0" y="79" fill="#656c7a" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" font-weight="500" text-anchor="middle" letter-spacing="0.08em">AI</text>
+    <text x="760.0" y="100" fill="#1c2028" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">get_component</text>
+    <text x="760.0" y="114" fill="#4b5260" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">MCP + REST</text>
+  </g>
+  <g>
+    <rect x="120" y="208" width="160" height="56" rx="6" fill="#f4f5f7"/>
+    <rect x="120" y="208" width="160" height="56" rx="6" fill="#1c2028" stroke="#4b5260" stroke-width="1" fill-opacity="0.05"/>
+    <rect x="128" y="214" width="27" height="12" rx="2" fill="none" stroke="#1c2028" stroke-width="0.8" stroke-opacity="0.3"/>
+    <text x="141.5" y="223" fill="#656c7a" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" font-weight="500" text-anchor="middle" letter-spacing="0.08em">WEB</text>
+    <text x="200.0" y="244" fill="#1c2028" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">React props type</text>
+    <text x="200.0" y="258" fill="#4b5260" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">packages/react</text>
+  </g>
+  <g>
+    <rect x="680" y="208" width="160" height="56" rx="6" fill="#f4f5f7"/>
+    <rect x="680" y="208" width="160" height="56" rx="6" fill="#1c2028" stroke="#4b5260" stroke-width="1" fill-opacity="0.05"/>
+    <rect x="688" y="214" width="42" height="12" rx="2" fill="none" stroke="#1c2028" stroke-width="0.8" stroke-opacity="0.3"/>
+    <text x="709.0" y="223" fill="#656c7a" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" font-weight="500" text-anchor="middle" letter-spacing="0.08em">NATIVE</text>
+    <text x="760.0" y="244" fill="#1c2028" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">React Native props</text>
+    <text x="760.0" y="258" fill="#4b5260" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">packages/react-native</text>
+  </g>
+  <g>
+    <rect x="400" y="208" width="160" height="56" rx="6" fill="#f4f5f7"/>
+    <rect x="400" y="208" width="160" height="56" rx="6" fill="#2563eb" stroke="#2563eb" stroke-width="1" fill-opacity="0.08"/>
+    <rect x="408" y="214" width="32" height="12" rx="2" fill="none" stroke="#2563eb" stroke-width="0.8"/>
+    <text x="424.0" y="223" fill="#2563eb" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" font-weight="500" text-anchor="middle" letter-spacing="0.08em">GATE</text>
+    <text x="480.0" y="244" fill="#1c2028" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">check:code</text>
+    <text x="480.0" y="258" fill="#4b5260" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">TypeScript compiler API</text>
+  </g>
+  <g>
+    <rect x="400" y="352" width="160" height="56" rx="6" fill="#f4f5f7"/>
+    <rect x="400" y="352" width="160" height="56" rx="6" fill="#ffffff" stroke="#1c2028" stroke-width="1"/>
+    <rect x="408" y="358" width="22" height="12" rx="2" fill="none" stroke="#1c2028" stroke-width="0.8" stroke-opacity="0.3"/>
+    <text x="419.0" y="367" fill="#656c7a" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" font-weight="500" text-anchor="middle" letter-spacing="0.08em">CI</text>
+    <text x="480.0" y="388" fill="#1c2028" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Build fails</text>
+    <text x="480.0" y="402" fill="#4b5260" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">names · values · defaults</text>
+  </g>  <line x1="32" y1="440" x2="928" y2="440" stroke="#1c2028" stroke-width="0.8" stroke-opacity="0.1"/>
+  <text x="32" y="464" fill="#4b5260" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">LEGEND</text>
+  <g transform="translate(104,456)"><rect x="0" y="0" width="20" height="12" rx="3" fill="#ffffff" stroke="#1c2028" stroke-width="1"/><text x="28" y="8" fill="#4b5260" font-size="9" font-family="'Geist Mono', ui-monospace, monospace">Source of truth</text></g>
+  <g transform="translate(244.0,456)"><rect x="0" y="0" width="20" height="12" rx="3" fill="#4b5260" stroke="#656c7a" stroke-width="1" fill-opacity="0.10"/><text x="28" y="8" fill="#4b5260" font-size="9" font-family="'Geist Mono', ui-monospace, monospace">Design file</text></g>
+  <g transform="translate(361.6,456)"><rect x="0" y="0" width="20" height="12" rx="3" fill="#2563eb" stroke="#2563eb" stroke-width="1" fill-opacity="0.08"/><text x="28" y="8" fill="#4b5260" font-size="9" font-family="'Geist Mono', ui-monospace, monospace">Gate (fails build)</text></g>
+  <g transform="translate(518.4000000000001,456)"><rect x="0" y="0" width="20" height="12" rx="3" fill="#1c2028" stroke="#4b5260" stroke-width="1" fill-opacity="0.05"/><text x="28" y="8" fill="#4b5260" font-size="9" font-family="'Geist Mono', ui-monospace, monospace">Reads the spec</text></g>
+
+      </svg>

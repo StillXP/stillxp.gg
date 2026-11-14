@@ -1,0 +1,321 @@
+/* Layout only. Every value is a Lock In token (--ds-*); `npm run lint:tokens` enforces it. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--ds-color-background-default);
+  color: var(--ds-color-text-primary);
+  font-family: var(--ds-font-family-sans);
+}
+
+h1, h2, h3, p, dl, dd, ol, ul, figure {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--ds-breakpoint-xl);
+  margin-inline: auto;
+  padding-inline: var(--ds-space-md);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-inline: var(--ds-space-xl);
+  }
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--ds-space-md);
+  top: calc(-1 * var(--ds-space-4xl));
+  z-index: var(--ds-z-index-toast);
+  padding: var(--ds-space-xs) var(--ds-space-sm);
+  background: var(--ds-color-background-inverse);
+  color: var(--ds-color-text-inverse);
+  border-radius: var(--ds-radius-md);
+}
+
+.skip-link:focus {
+  top: var(--ds-space-md);
+}
+
+.eyebrow {
+  color: var(--ds-color-text-secondary);
+}
+
+/* Header */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--ds-z-index-sticky);
+  background: var(--ds-color-background-default);
+  border-bottom: var(--ds-border-width-thin) solid var(--ds-color-border-subtle);
+}
+
+.site-header__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--ds-space-xs) var(--ds-space-lg);
+  min-height: var(--ds-space-3xl);
+  padding-block: var(--ds-space-xs);
+}
+
+.site-header__name {
+  color: var(--ds-color-text-primary);
+  text-decoration: none;
+  margin-inline-end: auto;
+}
+
+.site-header__name:focus-visible {
+  outline: var(--ds-border-width-thick) solid var(--ds-color-focus-ring);
+  outline-offset: var(--ds-space-2xs);
+  border-radius: var(--ds-radius-sm);
+}
+
+.site-header__nav {
+  display: flex;
+  gap: var(--ds-space-md);
+}
+
+@media (max-width: 639px) {
+  .site-header__nav {
+    order: 3;
+    width: 100%;
+  }
+}
+
+/* Hero */
+.hero {
+  display: grid;
+  gap: var(--ds-space-lg);
+  padding-block: var(--ds-space-3xl) var(--ds-space-4xl);
+}
+
+.hero__title {
+  max-width: 14ch;
+}
+
+.hero__intro {
+  max-width: 62ch;
+  color: var(--ds-color-text-secondary);
+}
+
+.hero__links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--ds-space-md) var(--ds-space-xl);
+}
+
+/* Sections */
+.section {
+  padding-block: var(--ds-space-2xl);
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-block: var(--ds-space-3xl);
+  }
+}
+
+.section--subtle {
+  background: var(--ds-color-background-subtle);
+}
+
+.section__head {
+  display: grid;
+  gap: var(--ds-space-sm);
+  margin-block-end: var(--ds-space-xl);
+}
+
+.section__lede {
+  max-width: 62ch;
+  color: var(--ds-color-text-secondary);
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ds-space-xs);
+}
+
+/* Lock In stats */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: var(--ds-space-md);
+  margin-block-end: var(--ds-space-2xl);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: var(--ds-space-2xs);
+  padding: var(--ds-space-lg);
+  background: var(--ds-color-surface-default);
+  border: var(--ds-border-width-thin) solid var(--ds-color-border-subtle);
+  border-radius: var(--ds-radius-lg);
+}
+
+.stat__label {
+  color: var(--ds-color-text-secondary);
+}
+
+/* Deep dives */
+.dive {
+  display: grid;
+  gap: var(--ds-space-xl);
+  padding-block-start: var(--ds-space-lg);
+}
+
+@media (min-width: 1024px) {
+  .dive {
+    grid-template-columns: 2fr 3fr;
+    align-items: start;
+  }
+}
+
+.dive__text {
+  display: grid;
+  gap: var(--ds-space-sm);
+}
+
+.dive__para {
+  color: var(--ds-color-text-secondary);
+}
+
+.dive__figure {
+  padding: var(--ds-space-sm);
+  background: var(--ds-color-surface-default);
+  border: var(--ds-border-width-thin) solid var(--ds-color-border-subtle);
+  border-radius: var(--ds-radius-lg);
+  box-shadow: var(--ds-shadow-sm);
+}
+
+.dive__figure img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--ds-radius-md);
+}
+
+.dive__visual {
+  display: grid;
+  gap: var(--ds-space-lg);
+  min-width: 0;
+}
+
+.code-sample {
+  display: grid;
+  gap: var(--ds-space-xs);
+  min-width: 0;
+}
+
+.code-sample figcaption {
+  color: var(--ds-color-text-secondary);
+}
+
+.code-sample pre {
+  margin: 0;
+  padding: var(--ds-space-md);
+  overflow-x: auto;
+  background: var(--ds-color-surface-sunken);
+  border: var(--ds-border-width-thin) solid var(--ds-color-border-subtle);
+  border-radius: var(--ds-radius-lg);
+  font-family: var(--ds-font-family-mono);
+  font-size: var(--ds-font-size-sm);
+  line-height: var(--ds-font-line-height-normal);
+  color: var(--ds-color-text-primary);
+}
+
+.code-sample pre:focus-visible {
+  outline: var(--ds-border-width-thick) solid var(--ds-color-focus-ring);
+  outline-offset: var(--ds-space-2xs);
+}
+
+.dive code {
+  font-family: var(--ds-font-family-mono);
+}
+
+.artifact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ds-space-sm) var(--ds-space-xl);
+  padding: 0;
+  margin-block-start: var(--ds-space-xl);
+  list-style: none;
+}
+
+/* Case studies */
+.cases {
+  display: grid;
+  gap: var(--ds-space-lg);
+  padding: 0;
+  list-style: none;
+}
+
+.case {
+  display: grid;
+  gap: var(--ds-space-md);
+  padding: var(--ds-space-lg);
+  background: var(--ds-color-surface-default);
+  border: var(--ds-border-width-thin) solid var(--ds-color-border-default);
+  border-radius: var(--ds-radius-lg);
+}
+
+@media (min-width: 768px) {
+  .case {
+    grid-template-columns: 12rem 1fr;
+    gap: var(--ds-space-xl);
+    padding: var(--ds-space-xl);
+  }
+}
+
+.case__meta {
+  display: grid;
+  align-content: start;
+  gap: var(--ds-space-2xs);
+}
+
+.case__period {
+  color: var(--ds-color-text-tertiary);
+}
+
+.case__body {
+  display: grid;
+  gap: var(--ds-space-sm);
+}
+
+.case__summary {
+  color: var(--ds-color-text-secondary);
+}
+
+.case__points {
+  display: grid;
+  gap: var(--ds-space-2xs);
+  padding-inline-start: var(--ds-space-lg);
+}
+
+.background {
+  max-width: 62ch;
+  margin-block-start: var(--ds-space-xl);
+  color: var(--ds-color-text-secondary);
+}
+
+/* Footer */
+.site-footer {
+  padding-block: var(--ds-space-xl);
+  border-top: var(--ds-border-width-thin) solid var(--ds-color-border-subtle);
+  color: var(--ds-color-text-secondary);
+}
