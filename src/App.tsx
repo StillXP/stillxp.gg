@@ -1,13 +1,8 @@
-import { useState } from 'react';
 import {
   DataTable,
-  Icon,
   Link,
   Tabs,
   Tag,
-  Toggle,
-  getResolvedColorMode,
-  setColorMode,
   type DataTableColumn,
 } from '@stillxp/react';
 import {
@@ -15,46 +10,16 @@ import {
   buttonCodeConnect,
   buttonFigmaMap,
   caseStudies,
+  caseStudyPath,
   deepDives,
+  findCaseStudy,
+  experience,
   lockIn,
   person,
   type FigmaMapRow,
   type MapStatus,
 } from './content';
-
-function ThemeToggle() {
-  const [dark, setDark] = useState(() => getResolvedColorMode() === 'dark');
-  return (
-    <Toggle
-      label="Dark mode"
-      size="sm"
-      labelPosition="start"
-      checked={dark}
-      onCheckedChange={(on) => {
-        setDark(on);
-        setColorMode(on ? 'dark' : 'light');
-      }}
-    />
-  );
-}
-
-function Header() {
-  return (
-    <header className="site-header">
-      <div className="container site-header__inner">
-        <a className="site-header__name ds-text-label-lg" href="#top">
-          {person.name}
-        </a>
-        <nav aria-label="Sections" className="site-header__nav">
-          <Link href="#lock-in" variant="subtle">Lock In</Link>
-          <Link href="#work" variant="subtle">Work</Link>
-          <Link href="#contact" variant="subtle">Contact</Link>
-        </nav>
-        <ThemeToggle />
-      </div>
-    </header>
-  );
-}
+import { Footer, Header } from './SiteChrome';
 
 function Hero() {
   return (
@@ -62,14 +27,13 @@ function Hero() {
       <p className="ds-text-overline eyebrow">
         {person.role} · {person.location}
       </p>
-      <h1 id="hero-title" className="ds-text-display hero__title">
-        {person.headline}
-      </h1>
-      <p className="ds-text-body-lg hero__intro">{person.intro}</p>
-      <div className="hero__links">
-        <Link href="#lock-in" variant="standalone">See how Lock In works</Link>
-        <Link href={lockIn.repo} external>Lock In on GitHub</Link>
+      <div className="hero__heading">
+        <h1 id="hero-title" className="ds-text-display hero__title">
+          {person.name}
+        </h1>
+        <p className="ds-text-heading-lg hero__tagline">{person.headline}</p>
       </div>
+      <p className="ds-text-body-lg hero__intro">{person.intro}</p>
     </section>
   );
 }
@@ -112,11 +76,11 @@ function LockInSection() {
     <section id="lock-in" className="section section--subtle" aria-labelledby="lock-in-title">
       <div className="container">
         <div className="section__head">
-          <p className="ds-text-overline eyebrow">Featured · 2026 · Solo, design and engineering</p>
+          <p className="ds-text-overline eyebrow">Personal project · 2026 · Solo, design and engineering</p>
           <h2 id="lock-in-title" className="ds-text-heading-xl">Lock In: a design system for people and AI agents</h2>
           <p className="ds-text-body-lg section__lede">
-            One JSON spec per component, checked in CI against the React and React Native code. Semantic tokens with a
-            contrast gate in the build. An MCP server so agents read the system instead of inventing hex values.
+            Each component has one JSON spec that CI checks against the React and React Native code. The build fails if
+            a color pairing misses contrast, and an MCP server lets agents read the system instead of guessing at colors.
           </p>
           <div className="tag-row">
             {['Figma', 'DTCG tokens', 'React', 'React Native', 'TypeScript', 'MCP'].map((t) => (
@@ -124,15 +88,6 @@ function LockInSection() {
             ))}
           </div>
         </div>
-
-        <dl className="stats">
-          {lockIn.stats.map((s) => (
-            <div key={s.label} className="stat">
-              <dt className="ds-text-body-sm stat__label">{s.label}</dt>
-              <dd className="ds-text-heading-lg stat__value">{s.value}</dd>
-            </div>
-          ))}
-        </dl>
 
         <Tabs
           aria-label="How Lock In works"
@@ -160,7 +115,11 @@ function LockInSection() {
           }))}
         />
 
-        <ul className="artifact-links" aria-label="Lock In artifacts">
+        <p className="ds-text-body-md lock-in__status">
+          Lock In is a personal project and isn’t published for other teams yet. The source, specs, Storybook and
+          Figma library are all public.
+        </p>
+        <ul className="artifact-links artifact-links--tight" aria-label="Lock In artifacts">
           <li><Link href={lockIn.repo} external>Source and specs on GitHub</Link></li>
           <li><Link href={lockIn.figma} external>Figma library</Link></li>
           {lockIn.storybook && <li><Link href={lockIn.storybook} external>Storybook</Link></li>}
@@ -171,20 +130,64 @@ function LockInSection() {
   );
 }
 
+function CaseStudies() {
+  if (caseStudies.length === 0) return null;
+  return (
+    <section id="case-studies" className="section" aria-labelledby="case-studies-title">
+      <div className="container">
+        <div className="section__head">
+          <p className="ds-text-overline eyebrow">In production</p>
+          <h2 id="case-studies-title" className="ds-text-heading-xl">Case studies</h2>
+        </div>
+        <ol className="studies">
+          {caseStudies.map((s) => (
+            <li key={s.slug} className="study">
+              <div className="study__body">
+                <div className="study__meta">
+                  {/* Decorative: the company name is in the text next to it. */}
+                  <span className="study__logo">
+                    <img src={s.logo} alt="" width={28} height={28} />
+                  </span>
+                  <p className="ds-text-overline eyebrow">{s.org} · {s.role}</p>
+                </div>
+                <h3 className="ds-text-heading-md">{s.title}</h3>
+                <p className="ds-text-body-lg study__summary">{s.summary}</p>
+                <dl className="study__outline">
+                  {s.outline.map((o) => (
+                    <div key={o.label} className="study__outline-row">
+                      <dt className="ds-text-label-md">{o.label}</dt>
+                      <dd className="ds-text-body-md">{o.text}</dd>
+                    </div>
+                  ))}
+                </dl>
+                <div className="tag-row">
+                  {s.tags.map((t) => (
+                    <Tag key={t} size="sm" variant="outline">{t}</Tag>
+                  ))}
+                </div>
+                <Link href={caseStudyPath(s.slug)} variant="standalone">Read the {s.name} case study</Link>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+  );
+}
+
 function Work() {
   return (
     <section id="work" className="section" aria-labelledby="work-title">
       <div className="container">
         <div className="section__head">
-          <p className="ds-text-overline eyebrow">In production</p>
-          <h2 id="work-title" className="ds-text-heading-xl">Design systems work</h2>
+          <p className="ds-text-overline eyebrow">Work</p>
+          <h2 id="work-title" className="ds-text-heading-xl">Experience</h2>
         </div>
         <ol className="cases">
-          {caseStudies.map((c) => (
+          {experience.map((c) => (
             <li key={c.id} className="case">
               <div className="case__meta">
-                <Icon name={c.icon} size="md" color="brand" />
-                <p className="ds-text-label-lg">{c.org}</p>
+                <p className="ds-text-body-sm case__role">{c.role}</p>
                 {c.period && <p className="ds-text-body-sm case__period">{c.period}</p>}
               </div>
               <div className="case__body">
@@ -200,11 +203,16 @@ function Work() {
                     <Tag key={t} size="sm">{t}</Tag>
                   ))}
                 </div>
+                {c.caseStudy && findCaseStudy(c.caseStudy) && (
+                  <Link href={caseStudyPath(c.caseStudy)} variant="standalone">
+                    Read the {findCaseStudy(c.caseStudy)!.name} case study
+                  </Link>
+                )}
               </div>
             </li>
           ))}
         </ol>
-        <p className="ds-text-body-md background">{background}</p>
+        {background && <p className="ds-text-body-md background">{background}</p>}
       </div>
     </section>
   );
@@ -216,7 +224,7 @@ function Contact() {
       <div className="container">
         <h2 id="contact-title" className="ds-text-heading-lg">Get in touch</h2>
         <p className="ds-text-body-lg section__lede">
-          I’m looking for senior design systems and design technologist roles, in New York or remote.
+          I’m looking for senior design systems and design technologist roles in New York or remote.
         </p>
         <ul className="artifact-links">
           <li><Link href={person.links.linkedin} external>LinkedIn</Link></li>
@@ -236,16 +244,11 @@ export function App() {
         <span id="top" />
         <Hero />
         <LockInSection />
+        <CaseStudies />
         <Work />
         <Contact />
       </main>
-      <footer className="site-footer">
-        <div className="container">
-          <p className="ds-text-body-sm">
-            Built with <Link href={lockIn.repo} variant="subtle" external>Lock In</Link> Design System
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }

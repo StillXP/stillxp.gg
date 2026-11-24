@@ -1,0 +1,176 @@
+{
+  "person": {
+    "name": "Andrew Still",
+    "role": "Senior design systems designer",
+    "location": "New York",
+    "headline": "Design systems for all",
+    "intro": "New York City based Design System Specialist with over 5 years of experience across design systems design, development and enablement.",
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/a-still/",
+      "github": "https://github.com/StillXP"
+    }
+  },
+  "lockIn": {
+    "repo": "https://github.com/StillXP/lock-in-design-system",
+    "figma": "https://www.figma.com/design/1dgB7LeRgTrVIenTmmrlvr/Lock-In-Design-System?node-id=3-140",
+    "storybook": "https://stillxp.github.io/lock-in-design-system/",
+    "hub": ""
+  },
+  "deepDives": [
+    {
+      "id": "agents",
+      "label": "Agents",
+      "title": "Agents can use it without breaking it",
+      "summary": "People and agents go through the same checks.",
+      "body": [
+        "A server shares the tokens, specs and docs over MCP. An agent working in another project can search the system, read a component’s spec, style with semantic tokens and check a new color pairing before using it.",
+        "Editing needs a key. When an agent changes a token, contrast is checked again. If a pair fails, the change is undone and the agent gets the failing pairs back so it can try another value.",
+        "This portfolio was built that way. The agent that wrote it pulled component specs and tokens from Lock In instead of guessing."
+      ],
+      "figure": {
+        "src": "/diagrams/agent-edit-loop.svg",
+        "alt": "An agent reads a component spec, then updates a token. Three contrast pairs fail, the file is restored and the agent receives a 422 listing them."
+      }
+    },
+    {
+      "id": "spec",
+      "label": "Spec",
+      "title": "One spec, checked against the code",
+      "summary": "The build fails if React, React Native and the spec disagree.",
+      "body": [
+        "Each component has one JSON spec listing its props, states, tokens, accessibility rules and usage. Code, Figma, docs and agents all read from it.",
+        "On every pull request, a script compares the React and React Native props with the spec. A missing prop, a different default or a mismatched option fails the build.",
+        "Figma can’t mirror code exactly, so the spec also records how each prop maps to Figma, including the 52 places where the two differ on purpose."
+      ],
+      "figure": {
+        "src": "/diagrams/spec-drift.svg",
+        "alt": "A component spec feeds the Figma props map and the get_component tool. A check script compares it with the React and React Native prop types and fails the build on drift."
+      }
+    },
+    {
+      "id": "contrast",
+      "label": "Contrast",
+      "title": "Contrast is checked on every build",
+      "summary": "486 checks across light, dark and two themes.",
+      "body": [
+        "Components use semantic color tokens, like “text primary,” which point to the base palette in light and dark mode. Themes only change those semantic tokens, so raw colors never reach a component.",
+        "Each token build checks 81 text and background pairs in every mode and theme. Text needs a 4.5:1 ratio, and borders and focus rings need 3:1. If any pair misses, the build fails and lists it.",
+        "When a check fails, the fix is a different token. The requirement never gets lowered."
+      ],
+      "figure": {
+        "src": "/diagrams/contrast-gate.svg",
+        "alt": "A token edit resolves aliases per mode and theme and runs the contrast pairs. If every pair passes, outputs are emitted; otherwise the build fails with the failing pairs."
+      }
+    },
+    {
+      "id": "figma",
+      "label": "Figma",
+      "title": "Figma and code, mapped prop by prop",
+      "summary": "Figma Variables come from the tokens, and every component has Code Connect.",
+      "body": [
+        "Code is the source of truth. A script turns the tokens into Figma Variables, with light and dark modes for each theme, and every variable shows the same CSS name engineers use.",
+        "Each spec maps its props to Figma: 214 rows across 15 components. Where the two differ, a note explains how. The loading prop in code, for example, is state=loading in Figma.",
+        "Code Connect covers 20 Figma components and 33 icons, so Dev Mode shows real Lock In code with the props the designer picked."
+      ],
+      "figure": "figma-map"
+    },
+    {
+      "id": "governance",
+      "label": "Governance",
+      "title": "Gaps become proposals",
+      "summary": "New components come in as proposals with evidence, and the owner decides.",
+      "body": [
+        "When a product needs something Lock In doesn’t have, it files a proposal instead of building a private workaround. The proposal explains the problem, shows where else it’s needed, says why no existing component fits and includes a draft spec. Agents file through MCP and people through a GitHub form.",
+        "I triage each one. Does more than one product need it? Could an existing component take a variant instead? Is the accessibility pattern settled? Once a proposal is accepted, a workflow opens a draft pull request with the spec, web and native code, stories and docs.",
+        "Retired components stay for at least one minor release, with a note pointing to the replacement.",
+        "The first proposal, Textarea, came from an agent working on VolleyXP. InputField couldn’t cover it, because a single-line input can’t wrap and Enter behaves differently. Textarea shipped on web and native with Code Connect, and VolleyXP replaced its workaround with it."
+      ],
+      "figure": {
+        "src": "/diagrams/proposal-lifecycle.svg",
+        "alt": "Lifecycle of a Lock In proposal: filed through the hub by an agent or through the GitHub issue form, it moves from proposed through triage, accepted and in code to released, with an optional in-design route and declined as the other outcome. Each status label runs the proposals workflow, which records it in the proposal file."
+      }
+    }
+  ],
+  "experience": [
+    {
+      "id": "verizon",
+      "org": "Verizon",
+      "role": "Senior Product Designer, Design Systems",
+      "title": "Specs, handoff and visual QA",
+      "tags": [
+        "Specs",
+        "Handoff",
+        "Visual QA",
+        "Storybook"
+      ],
+      "summary": "A contract on Verizon’s design system team, making sure system updates made it from Figma into code accurately.",
+      "points": [
+        "Managed the handoff of design system updates from design to development.",
+        "Wrote specs in Figma for design system components and templates.",
+        "Led visual QA for new design system additions across Figma and Storybook."
+      ],
+      "period": "Sep 2025 – Dec 2025 · New York"
+    },
+    {
+      "id": "figma",
+      "org": "Figma",
+      "role": "Product Enablement Manager",
+      "title": "Teaching design systems from inside Figma",
+      "tags": [
+        "Enablement",
+        "Training",
+        "Onboarding",
+        "Design system maturity"
+      ],
+      "summary": "I ran internal enablement at Figma, teaching employees how Figma and design systems fit into product development and how to talk about them with customers.",
+      "points": [
+        "Designed and led an internal training program on design systems, product design and software development.",
+        "Helped build a workflow sales teams used to measure the maturity of their customers’ design systems.",
+        "Rebuilt new-hire onboarding to cover how Figma works, where it fits in product development and how to talk about it with customers."
+      ],
+      "period": "Sep 2024 – Aug 2025 · New York",
+      "caseStudy": "design-system-education"
+    },
+    {
+      "id": "paramount",
+      "org": "Paramount",
+      "role": "Product Designer, Design Systems",
+      "title": "Automated design tokens across CBS Sports",
+      "tags": [
+        "Design tokens",
+        "Figma",
+        "React",
+        "Component APIs",
+        "Documentation"
+      ],
+      "summary": "I worked on the design system behind CBS Sports’ brands and platforms, from the token pipeline to the React component library.",
+      "points": [
+        "Set up an automated, end-to-end design token system across CBS Sports brands and platforms, which sped up development and kept teams aligned.",
+        "Worked with designers and developers to align component APIs between the Figma and React libraries.",
+        "Shipped functional and visual updates to the React component library.",
+        "Wrote documentation and educational content that made more people aware of the design system."
+      ],
+      "period": "Jan 2022 – Aug 2024 · Remote",
+      "caseStudy": "cbs-sports-tokens"
+    },
+    {
+      "id": "imperva",
+      "org": "Imperva",
+      "role": "Sales Engineer",
+      "title": "Explaining technical products to the people who buy them",
+      "tags": [
+        "Technical demos",
+        "Customer education",
+        "Usage analysis"
+      ],
+      "summary": "I was the technical resource for Imperva’s inside sales team. I worked with prospects on both the technical and business side to show how Imperva’s products could help them.",
+      "points": [
+        "Led technical demos for customers.",
+        "Stayed in touch with customers through the whole pre-sale process.",
+        "Analyzed usage statistics to find areas to improve, and taught customers how to use the product well."
+      ],
+      "period": "Oct 2016 – Apr 2019 · San Francisco Bay Area"
+    }
+  ],
+  "background": ""
+}

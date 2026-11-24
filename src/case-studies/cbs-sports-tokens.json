@@ -1,0 +1,238 @@
+{
+  "slug": "cbs-sports-tokens",
+  "order": 1,
+  "name": "CBS Sports design tokens",
+  "title": "Cutting token updates from weeks to hours at CBS Sports",
+  "org": "Paramount · CBS Sports",
+  "role": "Product Designer, Design Systems",
+  "logo": "/case-studies/cbs-sports-tokens/logo.svg",
+  "team": "Design system team of two",
+  "tags": [
+    "Design tokens",
+    "Token pipelines",
+    "Supernova",
+    "Style Dictionary",
+    "Figma",
+    "Multi-brand",
+    "Documentation"
+  ],
+  "summary": "I replaced a manual, Slack-driven token handoff at CBS Sports with a Supernova pipeline that opens pull requests in each platform’s repo. Token updates that used to wait days or weeks shipped in a few hours.",
+  "outline": [
+    {
+      "label": "Problem",
+      "text": "Token updates went out by hand over Slack, and a developer had to run a script to turn Figma tokens into SCSS. That worked for one brand on one web team, but Playbook was about to cover several brands and platforms."
+    },
+    {
+      "label": "Approach",
+      "text": "I interviewed the designers and developers using the tokens, chose Supernova over Zeroheight, and built a pipeline with an exporter for each brand that opens pull requests in each platform’s repo."
+    },
+    {
+      "label": "Review",
+      "text": "Every token change arrived as a pull request with a Slack announcement, and the lead engineer approved it before it shipped."
+    },
+    {
+      "label": "Result",
+      "text": "Token updates that used to wait days or weeks shipped in a few hours. I later onboarded two more brands, each across web, mobile and OTT."
+    }
+  ],
+  "cover": {
+    "src": "/case-studies/cbs-sports-tokens/cover.png",
+    "alt": "",
+    "width": 1400,
+    "height": 594
+  },
+  "sections": [
+    {
+      "heading": "Intro",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "I joined the Design System team at CBS Sports as its second full-time member and was tasked with improving their end-to-end design token system. At the time, the system was quite barebones. Token updates were manually communicated via Slack, and a developer was required to trigger the script that pulled tokens from Figma and translated them to SCSS."
+        },
+        {
+          "type": "image",
+          "src": "/case-studies/cbs-sports-tokens/old-process.png",
+          "alt": "The original token flow: Figma styles go through the Figma API into Zeroheight as token JSON. An engineer triggers a Style Dictionary script to pull the tokens, which translates them to SCSS for the web repository.",
+          "caption": "The original flow",
+          "width": 2048,
+          "height": 371
+        },
+        {
+          "type": "p",
+          "text": "For what was needed at the time, this process wasn’t unsuitable. One token set being distributed to one web team didn’t require sophistication. However, the future of the Playbook Design System was multi-brand and multi-platform, and would require a bit more control from our side."
+        },
+        {
+          "type": "image",
+          "src": "/case-studies/cbs-sports-tokens/playbook-future.png",
+          "alt": "Playbook scope. Current: CBS Sports on web only. Planned: CBS Sports on web, iOS, Android and OTT; CBS News on web and OTT; MaxPreps on web; SportsLine on web.",
+          "caption": "Playbook’s current and planned scope",
+          "width": 2048,
+          "height": 1433
+        }
+      ]
+    },
+    {
+      "heading": "Exploration",
+      "blocks": [
+        {
+          "type": "h",
+          "text": "Research"
+        },
+        {
+          "type": "p",
+          "text": "I began by interviewing the designers and developers on the teams we’d be providing tokens for. Interviews, process walkthroughs and data gathered from Figma and code repos helped uncover some primary issues."
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Automation: the manual token update process often caused friction across design and development.",
+            "Education and documentation: users of the system lacked the comprehension needed to understand the value of abiding by it.",
+            "Advancement and expansion: growth of the design system would outpace the current token process."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Identifying these holes in our system gave me a strong starting point when exploring different solutions and planning out the future of Playbook Design Tokens."
+        },
+        {
+          "type": "p",
+          "text": "As a team of two, we weren’t focused on just this project alone. Playbook had plans for expansion across our component libraries, documentation, supported platforms and more. This pushed us toward searching for a third-party solution that would require a bit less hands-on management than owning our own DS repository. I evaluated two platforms, Zeroheight and Supernova. Both were “Design System as a Service” platforms that provided token processing, documentation and general design system management at differing levels of sophistication. Comparatively, however, Supernova ended up being a much better value for what we needed."
+        },
+        {
+          "type": "h",
+          "text": "Supernova"
+        },
+        {
+          "type": "p",
+          "text": "Supernova addressed our first issue, as it allowed for automated token updates to code once updated in Figma. Once we pushed an update to our Figma files, Supernova would run a “pipeline” that took our Figma token data, converted it to the required platform (SCSS, Tailwind, iOS, Android, etc.), then delivered it to our repositories via a pull request."
+        },
+        {
+          "type": "image",
+          "src": "/case-studies/cbs-sports-tokens/pipeline-formats.png",
+          "alt": "Supernova’s pipelines list showing three Playbook exporters (CBS Sports Bison, UReg and Web Components). Each runs manually, opens a GitHub pull request to main, and shows a successful latest build.",
+          "caption": "Playbook pipelines in Supernova",
+          "width": 964,
+          "height": 305
+        },
+        {
+          "type": "p",
+          "text": "These exporters were provided by Supernova, with the ability to branch out your own version with customized capabilities. I customized the default token formats, for example converting hex with alpha to RGBA, converting values to rem and shortening hex codes."
+        },
+        {
+          "type": "image",
+          "src": "/case-studies/cbs-sports-tokens/exporters.png",
+          "alt": "Two token transforms. Hex with alpha to RGBA: $light-brand-primary #066fe480 becomes rgba(6, 111, 228, 0.5). Hex shorten: $light-text-warning #ff0000 becomes #f00.",
+          "caption": "Two of our custom token transforms",
+          "width": 2048,
+          "height": 523
+        },
+        {
+          "type": "p",
+          "text": "Since we found that many of our users were unsure of the value of the work we were doing, a side project broke out called [Figma Academy](/work/design-system-education/), which I later brought to Figma. There was still work I could do in Supernova to push design system comprehension. The platform’s ability to connect directly to our Figma files, tokens and components made it easy to build documentation with real-world examples."
+        },
+        {
+          "type": "p",
+          "text": "Expansion was our last box to check, and Supernova took the cake here, as the design token pipeline was easy to use and expand. Since we planned on going from one brand on one platform to multiple brands across multiple platforms, it was imperative that we had this flexibility. The general experience of using Supernova also seemed better geared toward our needs, giving us an easily digestible space to manage a system across multiple spaces."
+        }
+      ]
+    },
+    {
+      "heading": "Building",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "I spent the next few weeks building our Supernova environment and testing the end-to-end workflow."
+        },
+        {
+          "type": "image",
+          "src": "/case-studies/cbs-sports-tokens/workflow.png",
+          "alt": "The new flow: Figma Variables reach Supernova through the Figma API. A design system engineer releases a version, Supernova exporters translate the tokens to SCSS, Tailwind, Android and iOS, and open pull requests to CBS Sports web, Android and iOS, SportsLine web and MaxPreps web.",
+          "caption": "The new flow",
+          "width": 2048,
+          "height": 974
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "A change is made in the Figma library.",
+            "Supernova pulls the tokens.",
+            "The update is pushed.",
+            "Supernova translates the tokens to each platform.",
+            "The tokens are delivered to the GitHub repo as a pull request.",
+            "GitHub posts an automated announcement in Slack.",
+            "The lead engineer approves the changes."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "I also wrote some high-level documentation to test the editor experience, then migrated our old documentation, which the direct connection between Supernova and our Figma libraries made easy. This would eventually become the central hub for Playbook DS users to discover, learn and use the system."
+        },
+        {
+          "type": "image",
+          "src": "/case-studies/cbs-sports-tokens/documentation.png",
+          "alt": "The Playbook documentation site in Supernova, open to the Tokens page for Surfaces and Overlays, with Light, Dark and Dynamic tabs and swatches for surface, overlay and status colors.",
+          "caption": "Playbook documentation in Supernova",
+          "width": 1475,
+          "height": 1028
+        }
+      ]
+    },
+    {
+      "heading": "Token structure",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "The tokens had three tiers: base, semantic and component. Each brand had its own Supernova exporter, and every color reached code through that exporter."
+        },
+        {
+          "type": "p",
+          "text": "Light and dark didn’t work like a normal theme switch, because a single page could show both at once. Instead of a global theme, we had two surface colors, light and dark, and the surface decided the colors of the content placed on it. That’s why the token names start with their surface, like $light-brand-primary."
+        },
+        {
+          "type": "h",
+          "text": "Typography before Variables"
+        },
+        {
+          "type": "p",
+          "text": "Before we started our Figma libraries, our developers styled text with SCSS mixins built from individual tokens for font weight, size, letter spacing, line spacing, decoration and more. Figma didn’t support variables yet, and text styles weren’t flexible enough to match that system."
+        },
+        {
+          "type": "p",
+          "text": "To support it, we built a typography component in Figma that worked like the mixin. Designers chose each property on its own, and every combination was built as a variant. We then created matching variables in Supernova, which were exported to code."
+        },
+        {
+          "type": "p",
+          "text": "Once Figma released Variables, we were able to connect these values directly between Figma and code."
+        }
+      ]
+    },
+    {
+      "heading": "Outcome",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Implementation of this system provided a number of outcomes. For one, we were no longer stuck with lingering token update tickets that caused friction between teams. Updates that were previously being pushed off for days or weeks were now being completed in just a few hours. Everyone liked that."
+        },
+        {
+          "type": "p",
+          "text": "It also gave us a new level of control. Any tokens that weren’t supported by Figma (this was before Variables: spatial, type properties, etc.) were no longer being managed by our engineering team, but by us. This allowed for stronger alignment on naming conventions and usage, removing some issues that would occur during handoff."
+        },
+        {
+          "type": "p",
+          "text": "For the future, this system set us up for success when it came time to onboard new brands and teams. Over time I onboarded two more brands that both spanned three platforms (web, mobile and OTT). Supernova’s management capabilities made this process smooth and universal for otherwise siloed teams."
+        }
+      ]
+    },
+    {
+      "heading": "Looking back",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "If I built this pipeline today, I’d add the checks I built into [Lock In](/#lock-in): a contrast check on every token build, and a spec check that fails when code and design drift apart."
+        }
+      ]
+    }
+  ]
+}

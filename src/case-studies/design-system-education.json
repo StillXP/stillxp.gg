@@ -1,0 +1,184 @@
+{
+  "slug": "design-system-education",
+  "order": 2,
+  "name": "Figma design system education",
+  "title": "Teaching design systems to Figma’s sales teams",
+  "org": "Figma",
+  "role": "Product Enablement Manager",
+  "logo": "/case-studies/design-system-education/logo.svg",
+  "tags": [
+    "Enablement",
+    "Training",
+    "Design systems",
+    "Curriculum design",
+    "Sales enablement"
+  ],
+  "summary": "I built Figma’s first product enablement program, teaching sales teams how design tokens, Code Connect, Dev Mode and design systems fit into product development, so they could keep up with technical buyers.",
+  "outline": [
+    {
+      "label": "Problem",
+      "text": "As Figma added design tokens, Code Connect and MCP tooling, its customers became more technical, and sales reps needed a stronger grasp of product development to keep up."
+    },
+    {
+      "label": "Approach",
+      "text": "Weekly hands-on sessions adapted from Figma Academy, then a long-term program: a knowledge base, a quarterly three-day Advanced Practitioner training and in-person new hire training."
+    },
+    {
+      "label": "Result",
+      "text": "Hundreds of employees went through the program. Reps reported more confidence with technical customers, win rate on design system accounts rose from 31% to 44%, and SE escalations from trained reps fell 28%."
+    }
+  ],
+  "cover": {
+    "src": "/case-studies/design-system-education/cover.png",
+    "alt": "",
+    "width": 2120,
+    "height": 664
+  },
+  "sections": [
+    {
+      "heading": "Intro",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "In late 2024 I joined Figma as their first Product Enablement Manager. As Figma’s offerings became more sophisticated, it became necessary for sales reps to have a stronger understanding of the product development landscape. I came in to create programs, resources and plans for shrinking this gap."
+        }
+      ]
+    },
+    {
+      "heading": "Overview",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Being a relatively newer focus, design systems have advanced quickly over the last few years. As a leader in the space, Figma has needed to quickly adjust their offerings to fill the gaps needed by product teams that were investing more and more into design systems. Moving further into this realm transformed Figma from a predominantly product design focused tool to one with a much more technical focus. Design tokens, Code Connect, MCP tooling and more were being developed to further connect product design output with their counterparts in engineering."
+        },
+        {
+          "type": "p",
+          "text": "By moving into this territory, Figma was no longer selling itself as a purely product design focused product. Customers were now more design system and engineering focused than ever before. Because of this, Figma began looking for ways to improve their sales teams’ understanding of these new customers and the world they work in."
+        },
+        {
+          "type": "p",
+          "text": "My role was to help non-product-focused Figma employees understand this new environment the product was moving into. Understanding the details, history and application of product development would ensure they could engage in deeper conversations with these new users."
+        }
+      ]
+    },
+    {
+      "heading": "Quick wins",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Figma moved fast and was looking for some immediate enablement for their sales teams while we developed a more robust program for the future. Fortunately, I had materials ready to roll out from my previous position. During my time at Paramount, I ran a program called Figma Academy that taught the users of our design system how to implement new Figma features, as well as learn about updates to the system. These sessions were highly relevant (or easily modifiable to be) to the sales folks at Figma, as many of them lacked hands-on experience with the tool."
+        },
+        {
+          "type": "p",
+          "text": "We began by running weekly sessions that dove into topics both hands-on in the tool and relevant to the landscape of design systems. Interactive sessions included things like understanding auto layout, the power of components, design token management and more. Then we’d follow up with a session on how those previous topics translate over to code and why their alignment was so important."
+        },
+        {
+          "type": "p",
+          "text": "Many of the participants in this program said that this helped build their confidence with customers when discussing the product. While they weren’t out there building UI for customers, being able to share some sort of common ground relieved some pressure during conversation. Confidence is key!"
+        }
+      ]
+    },
+    {
+      "heading": "Long term",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "While our short-term programs ran, we began planning the future of product enablement at Figma. We broke down the enablement program into three spaces:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Knowledge base",
+            "Live training",
+            "New hire training"
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/case-studies/design-system-education/program-structure.png",
+          "alt": "Product Enablement Program, launched at Figma in Q4 2024, in three parts. Knowledge Base (central repository): battle cards, user personas, talk tracks, feature one-pagers and technical overviews. Live Training (Advanced Practitioner): Product Design 101, Software Dev 101, Design Systems 101, recordings and slides, and knowledge checks. New Hire Training (in-person onboarding): condensed 101s, Q&A, Figma hands-on and knowledge checks.",
+          "caption": "The three parts of the program",
+          "width": 2864,
+          "height": 1776
+        },
+        {
+          "type": "h",
+          "text": "Knowledge base"
+        },
+        {
+          "type": "p",
+          "text": "We wanted a centralized repository for all learnings we created, as well as other materials like competitive battle cards, user personas, talk tracks, feature one-pagers and more. These were similar to what we had available from our Sales Enablement team, but with more focus on technical talking points."
+        },
+        {
+          "type": "image",
+          "src": "/case-studies/design-system-education/knowledge-base.png",
+          "alt": "A knowledge base battle card comparing Knapsack and Figma across design tokens and theming, design-to-code workflow, documentation, prototyping and enterprise governance, with positioning notes, a summary of Knapsack’s customers, and common objections with responses.",
+          "caption": "An example battle card from the knowledge base",
+          "width": 2048,
+          "height": 1704
+        },
+        {
+          "type": "h",
+          "text": "Live training"
+        },
+        {
+          "type": "p",
+          "text": "The meat and potatoes of product enablement became our live training sessions, named the Advanced Practitioner Program. This was a live enablement training program that brought Figma employees together to learn about three major pillars of product development: product design, engineering and development, and design systems."
+        },
+        {
+          "type": "p",
+          "text": "The product design portion was designed to provide crucial context into the space that Figma was brought to life in. What kind of problems do product designers solve? What tools have they used and why? What has changed about their work in the last 10 years?"
+        },
+        {
+          "type": "p",
+          "text": "Engineering and development focused on giving a general overview of how web applications function on both the front end and back end, to help differentiate where we sit in the process. We explored topics like programming languages vs. frameworks, front-end vs. back-end code, how engineers historically interact with product design and more. Again, this section provided important context for employees to interact with new technical customers."
+        },
+        {
+          "type": "p",
+          "text": "Lastly, we joined our first two topics together with design systems. We looked at early visual design languages and why they were created, why a unified interface had become so important, and the gaps we needed to bridge in order to get there. We gave a look into the power of things like design tokens, connected components, Dev Mode and more. With the learnings from our previous sessions, we could better show how design systems were allowing for a more unified development process."
+        },
+        {
+          "type": "image",
+          "src": "/case-studies/design-system-education/advanced-practitioner.png",
+          "alt": "Advanced Practitioner Program agenda. Day 1, Product Design 101: designer problems, tooling history and modern workflows. Day 2, Software Dev 101: languages and frameworks, front end vs. back end, and design handoff. Day 3, Design Systems 101: history, supporting technology such as tokens and workflows, and Figma’s position.",
+          "caption": "The Advanced Practitioner Program’s three days",
+          "width": 2812,
+          "height": 2748
+        },
+        {
+          "type": "p",
+          "text": "Each quarter we ran the program as a three-day Zoom training, holding every session twice a day to cover time zones. Hundreds of employees went through it, and the recordings and slide decks were available to everyone afterward."
+        },
+        {
+          "type": "h",
+          "text": "New hire training"
+        },
+        {
+          "type": "p",
+          "text": "For new hire training, we saved some time and resources by adjusting our Advanced Practitioner Program to take place over two days of in-person training. It dove into less technical detail and explained more of the history behind why the problems we solve are important. We also opened up a lot of time for hands-on usage of Figma, so new hires could learn the basics of using our tool. These trainings took place once per quarter in Figma’s San Francisco office."
+        }
+      ]
+    },
+    {
+      "heading": "Results",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "After the implementation of our new product enablement programs, we learned from sales employees that their confidence had risen when speaking with technical customers. They felt that the ability to speak a bit closer to customers’ environments and issues helped speed up deals and build better relationships. To measure the program, we tracked ramp time, since onboarding got new hires customer ready sooner; sales cycle length, since trained reps needed sales engineers less often; how often each knowledge base resource was used and which were most popular; and training scores. On the sales side, the results included:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Win rate on design system accounts: 31% → 44%",
+            "Average deal size on technical accounts: up 18%",
+            "SE escalation requests from trained reps: down 28%"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "All in all, we measured the program to be a success!"
+        }
+      ]
+    }
+  ]
+}
